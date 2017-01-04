@@ -1,0 +1,6 @@
+@function blackOp($opacity) {
+  @return rgba(black, $opacity);
+}
+@function whiteOp($opacity) {
+  @return rgba(white, $opacity);
+} 

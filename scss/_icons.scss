@@ -1,0 +1,163 @@
+/********************
+ 	FONT AWESOME
+********************/
+
+///// VARIABLES /////
+ 
+
+//// GENERAL /////
+
+$fa-font-path:        "../fonts" !default;
+$fa-font-size-base:   14px !default;
+$fa-line-height-base: 1 !default;
+//$fa-font-path:        "//netdna.bootstrapcdn.com/font-awesome/4.5.0/fonts" !default; // for referencing Bootstrap CDN font files directly
+$fa-css-prefix:       fa !default;
+$fa-version:          "4.5.0" !default;
+$fa-border-color:     #eee !default;
+$fa-inverse:          #fff !default;
+$fa-li-width:         (30em / 14) !default;
+
+//// SOCIAL ////
+
+$fa-var-facebook: "\f09a";		//facebook
+$fa-var-twitter: "\f099";		//twitter
+$fa-var-google-plus: "\f0d5";	//google plus
+$fa-var-pinterest: "\f0d2";		//pinterest
+$fa-var-instagram: "\f16d";		//insta
+// $fa-var-rss: "\f09e";			//web feed
+// $fa-var-stumbleupon: "\f1a4";	//stumble upon
+// $fa-var-cloud-download: "\f0ed";//cloud download
+// $fa-var-cloud-upload: "\f0ee";	//cloud upload
+// $fa-var-lightbulb-o: "\f0eb";	//light
+// $fa-var-keyboard-o: "\f11c";	//keyboard
+// $fa-var-bolt: "\f0e7";			//bolt
+
+// $fa-var-flickr: "\f16e";    // flickr
+
+$fa-var-dribbble: "\f17d";  // dribbble
+$fa-var-tumblr: "\f173";  // tumblr
+$fa-var-youtube-play: "\f16a";  // youtube
+// $fa-var-apple: "\f179";
+// $fa-var-android: "\f17b";
+
+//// NAVIGATION ////
+$fa-var-angle-down: "\f107"; // angel-down
+$fa-var-angle-left: "\f104"; // angel-left
+$fa-var-angle-right: "\f105"; // angel-right
+$fa-var-angle-up: "\f106"; // angel-up
+$fa-var-times: "\f00d"; // close
+$fa-var-bars: "\f0c9"; // bars
+$fa-var-check:"\f00c"; // check
+$fa-var-shopping-cart:"\f07a"; // shopping-cart
+$fa-var-search:"\f002"; //search
+$fa-var-users:"\f0c0"; //users
+$fa-var-eye:"\f06e"; //eye
+$fa-var-commenting:"\f27a"; //eye
+$fa-var-marker:"\f041"; //marker
+
+$fa-var-github:"\f09b"; //github
+///// MIXINS ///////
+$fa-var-picture-o:"\f03e"; //picture
+$fa-var-linkedin:"\f0e1"; //linkdin
+$fa-var-phone:"\f095"; //phone
+$fa-var-envelope:"\f0e0"; //email
+@mixin fa-icon() {
+  display: inline-block;
+  font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+@mixin fa-icon-rotate($degrees, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  -webkit-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+///// FONT //////
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('#{$fa-font-path}/fontawesome-webfont.eot?v=#{$fa-version}');
+  src: url('#{$fa-font-path}/fontawesome-webfont.eot?#iefix&v=#{$fa-version}') format('embedded-opentype'),
+    url('#{$fa-font-path}/fontawesome-webfont.woff2?v=#{$fa-version}') format('woff2'),
+    url('#{$fa-font-path}/fontawesome-webfont.woff?v=#{$fa-version}') format('woff'),
+    url('#{$fa-font-path}/fontawesome-webfont.ttf?v=#{$fa-version}') format('truetype'),
+    url('#{$fa-font-path}/fontawesome-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg');
+//  src: url('#{$fa-font-path}/FontAwesome.otf') format('opentype'); // used when developing fonts
+  font-weight: normal;
+  font-style: normal;
+}
+
+/////// CORE ////////
+
+.#{$fa-css-prefix} {
+  display: inline-block;
+  font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+////// SIZE ///////
+
+.#{$fa-css-prefix}-lg {
+  font-size: (4em / 3);
+  line-height: (3em / 4);
+  vertical-align: -15%;
+}
+
+.#{$fa-css-prefix}-1_5x { font-size: 1.5em; }
+.#{$fa-css-prefix}-2x { font-size: 2em; }
+.#{$fa-css-prefix}-3x { font-size: 3em; }
+.#{$fa-css-prefix}-4x { font-size: 4em; }
+.#{$fa-css-prefix}-5x { font-size: 5em; }
+
+///// ICONS ////////
+
+
+.#{$fa-css-prefix}-facebook:before { content: $fa-var-facebook; }   			//fb
+
+.#{$fa-css-prefix}-google-plus:before { content: $fa-var-google-plus; }			//goggle plus
+ .#{$fa-css-prefix}-pinterest:before { content: $fa-var-pinterest; }				//pinterest
+ .#{$fa-css-prefix}-instagram:before { content: $fa-var-instagram; }				// insta
+// .#{$fa-css-prefix}-rss:before { content: $fa-var-rss; }							//web feed
+// .#{$fa-css-prefix}-stumbleupon:before { content: $fa-var-stumbleupon; }			//stumble upon
+// .#{$fa-css-prefix}-cloud-download:before { content: $fa-var-cloud-download; }	//cloud down
+// .#{$fa-css-prefix}-cloud-upload:before { content: $fa-var-cloud-upload; }		// cloud up
+// .#{$fa-css-prefix}-lightbulb-o:before { content: $fa-var-lightbulb-o; }			//light
+// .#{$fa-css-prefix}-keyboard-o:before { content: $fa-var-keyboard-o; }			//keyboard
+// .#{$fa-css-prefix}-bolt:before { content: $fa-var-bolt; }						//bolt
+
+ .#{$fa-css-prefix}-twitter:before { content: $fa-var-twitter; }         //twitter
+  .#{$fa-css-prefix}-youtube-play:before { content: $fa-var-youtube-play; }         //twitter
+  .#{$fa-css-prefix}-tumblr:before { content: $fa-var-tumblr; }         //twitter
+// .#{$fa-css-prefix}-flickr:before { content: $fa-var-flickr; }
+ .#{$fa-css-prefix}-dribbble:before { content: $fa-var-dribbble; }
+.#{$fa-css-prefix}-angle-down:before { content: $fa-var-angle-down; }
+.#{$fa-css-prefix}-angle-left:before { content: $fa-var-angle-left; }
+.#{$fa-css-prefix}-angle-right:before { content: $fa-var-angle-right; }
+.#{$fa-css-prefix}-angle-up:before { content: $fa-var-angle-up; }
+.#{$fa-css-prefix}-times:before { content: $fa-var-times; }
+.#{$fa-css-prefix}-bars:before { content: $fa-var-bars; }
+
+// .#{$fa-css-prefix}-check:before { content: $fa-var-check; }
+// .#{$fa-css-prefix}-apple:before { content: $fa-var-apple; }
+// .#{$fa-css-prefix}-android:before { content: $fa-var-android; }
+
+.#{$fa-css-prefix}-shopping-cart:before { content: $fa-var-shopping-cart; }
+.#{$fa-css-prefix}-search:before { content: $fa-var-search; }
+.#{$fa-css-prefix}-users:before { content: $fa-var-users; }
+.#{$fa-css-prefix}-eye:before { content: $fa-var-eye; }
+.#{$fa-css-prefix}-commenting:before { content: $fa-var-commenting; }
+.#{$fa-css-prefix}-marker:before { content: $fa-var-marker; }
+.#{$fa-css-prefix}-github:before { content: $fa-var-github; }
+.#{$fa-css-prefix}-picture-o:before { content: $fa-var-picture-o; }
+.#{$fa-css-prefix}-linkedin:before { content: $fa-var-linkedin; }
+.#{$fa-css-prefix}-phone:before { content: $fa-var-phone; }
+.#{$fa-css-prefix}-envelope:before { content: $fa-var-envelope; }

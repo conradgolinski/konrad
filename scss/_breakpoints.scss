@@ -1,0 +1,42 @@
+/*********************
+BREAKPOINTS
+*********************/
+
+ @mixin breakpoint($point) {
+   @if $point == huge {
+     @media (min-width: 100em) { @content ; }
+  }
+    @if $point == desktop {
+     @media (min-width: 70em) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (min-width: 64em) { @content ; }
+  }
+
+   @else if $point == betweenlgmd {
+     @media (min-width: 62em) and (max-width: 70em) { @content ; }
+  }
+
+    @else if $point == tablet {
+     @media (min-width: 47.938em) { @content ; }
+  }
+    @else if $point == tabmob {
+     @media (max-width:62em)  { @content ; }
+
+  }
+   @else if $point == phablet {
+     @media (min-width: 37.5em)  { @content ; }
+  }
+  @else if $point == phabletonly {
+     @media (min-width: 42em) and (max-width: 47.937em) { @content ; }
+  }
+   @else if $point == phabmob {
+     @media (max-width:47.937em)  { @content ; }
+
+  }
+  @else if $point == mobileonly {
+     @media (max-width: 41.9em)  { @content ; }
+
+  }
+  
+}  

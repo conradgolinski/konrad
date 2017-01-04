@@ -1,0 +1,470 @@
+  
+@mixin word-wrap() {
+  word-break:     break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens:    auto;
+  hyphens:         auto;
+} 
+
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@mixin text-align-last($pos){
+    -moz-text-align-last:    $pos;
+    -o-text-align-last:      $pos;
+    -webkit-text-align-last: $pos;
+    text-align-last:         $pos;
+}
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+/*******************
+      TRANSITION    
+********************/
+
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-duration:    $duration;
+    -o-transition-duration:      $duration;
+    -webkit-transition-duration: $duration;
+    transition-duration:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+
+
+
+
+
+
+
+
+
+/*******************
+       IMAGES    
+********************/
+
+
+@mixin imageRetina-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+
+/**********************
+      BORDER_RADIUS
+**********************/
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+          background-clip: padding-box; 
+}
+
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+          border-top-right-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+          border-top-left-radius: $radius;
+          background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+          border-bottom-right-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+          border-top-right-radius: $radius;
+          background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+          border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+          border-bottom-left-radius: $radius;
+          background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+          border-bottom-left-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+          border-top-left-radius: $radius;
+          background-clip: padding-box;
+}
+
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/*******************
+      CENTERING
+*******************/
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin center-block {
+  margin-left: auto;
+  margin-right: auto;
+  float:none;
+}
+
+@mixin center-text($heightValue: 12px ){
+    line-height: $heightValue;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/*******************
+      POSITING
+********************/
+
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+
+/*******************
+      ANIMATION
+********************/
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: $str;
+  -moz-animation: $str;
+  -ms-animation: $str;
+  -o-animation: $str;
+  animation: $str;      
+}
+
+@mixin transform($arg...){
+  -webkit-transform: $arg;
+  -moz-transform: $arg;
+  -o-transform: $arg;
+  transform:$arg;
+}
+
+
+/******************
+    BACKGROUNDS
+******************/
+@mixin bg-blend-mode($color,$op:0.5,$type:'darken'){
+  @include rgba(background-color,$color,$op);
+    background-blend-mode: #{$type};
+}
+
+@mixin bg-cover($url:'') {
+  background-image: url($url);
+  background-size: cover;
+  width: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin linear-gradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin rgba($type,$color, $opacity: 0.8) {
+
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+  @if($type == 'background'){
+    background: rgba($red,$green,$blue, $opacity);
+  }
+  @else if($type =="color"){
+    color: rgba($red,$green,$blue, $opacity);
+  } 
+  @else if($type =="background-color"){
+    background-color: rgba($red,$green,$blue, $opacity);
+  }
+}
+
+
+
+///  INPUT //////
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content};
+  &:-moz-placeholder           {@content};
+  &::-moz-placeholder          {@content};
+  &:-ms-input-placeholder      {@content};
+};
+
+
+/*************************
+      MATERIAL DISIGN
+*************************/
+
+/* ****************
+    INK EFFECT
+*******************/
+
+@mixin ink($width,$height,$color,$yes:'yes',$text:#fff,$border:0.5rem,$scale:5,$time:0.2s) {
+
+  $r:red($color);
+  $g:green($color);
+  $b:blue($color);
+  
+  .ripplelink {
+    display: block;
+    float: left;
+    width: $width;
+    height: $height;
+    line-height: $height;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color:$text !important;
+    z-index: 0; 
+    background-color: $color;
+      @include transition(all 0.2s ease-in);
+      @include border-radius($border);
+     @if($yes !=''){
+      @include box-shadow(0px,2px,10px,rgba(0, 0, 0, 0.5));
+    }
+     @content;
+
+      &:hover {
+          @include transition-duration($time);
+          @include transition-timing-function(ease-in);
+          z-index: 10;
+      }
+      &:active {
+        @if($yes !=''){
+          @include box-shadow(0px,3px,10px,rgba(0, 0, 0, 0.5));
+        }
+      }
+      .ink {
+    display: block;
+    position: absolute;
+    @if ($r<=255 and $r>200 and $g<=255 and $g>200 and $b<=255 and $b>200){
+    background: rgba(100, 100, 100, 0.5);
+    }
+    @else {
+    background: rgba(255, 255, 255, 0.5);
+    }
+    @include border-radius(100%);
+    @include transform(scale(0));
+  }
+  
+}
+ 
+
+.animateRipple {
+    @include animation(ripple 0.5s linear);
+  }
+@include keyframes(ripple){
+     100% {
+      opacity: 0;
+      -webkit-transform: scale(2);
+    }
+    0%{
+        opacity: 1;
+        -webkit-transform:scale(0);
+      }
+  }
+}
+
+
+
+/*********************
+//   FLOATING LABEL
+*********************/
+
+// struct: 
+// <div class="group">      
+// <input type="text" required>
+// <span class="highlight"></span>
+// <span class="bar"></span>
+// <label>Email</label>
+// </div>
+
+@mixin floating-label($width,$height,$firstcolor,$color,$font,$border:1){
+
+  .group {
+    @content;
+    width:$width;
+    position:relative; 
+    margin-bottom:$font*1.5+px; 
+     margin-top:$font*1.5+px;
+
+    input,textarea {
+      resize:none;
+        font-size:#{$font}px;
+        @if($height != ''){
+          height: $height;
+        }
+        padding:10px 10px 10px 5px;
+        width:100%;
+        border:0;
+        border-bottom:#{$border}px solid $firstcolor;
+          @include transition(all 0.2s ease-in);
+        &:focus{border-bottom:#{$border}px solid $color;}
+      }
+        input:valid{
+            border-bottom:#{$border}px solid $color;
+          }
+      
+      label {
+        color:$firstcolor/1.2; 
+        font-size:#{$font}px;
+        font-weight:normal;
+        position:absolute;
+        pointer-events:none;
+        left:10px;
+        top:#{$font}px;
+          @include transition(all 0.2s ease-in);
+      }
+
+      /* active state */
+      input:focus ~ label, input:valid ~ label,textarea:focus ~ label{
+        top:-#{$font}px;
+        left:0px;
+        font-size:$font*0.8+px;
+        color:$color;
+      }
+
+      /* BOTTOM BARS ================================= */
+      .bar  { position:relative; display:block; width:100%; }
+      .bar:before, .bar:after   {
+        content:'';
+        height:2px; 
+        width:0;
+        bottom:1px; 
+        position:absolute;
+        background:$color; 
+        @include transition(all 0.2s ease-in);
+      }
+      .bar:before {
+        left:50%;
+      }
+      .bar:after {
+        right:50%; 
+      }
+
+      /* active state */
+      input:focus ~ .bar:before, input:focus ~ .bar:after,textarea:focus ~ .bar:before, textarea:focus ~ .bar:after {
+        width:50%;
+      }
+      input:focus ~ .highlight,textarea:focus ~ .highlight {
+        @include animation(inputHighlighter 0.2s ease);
+      }
+  }
+   @include keyframes(inputHighlighter){
+     from { background:$color; }
+    to  { width:0; background:transparent; }
+  }
+
+  
+ }
+
+/* form starting stylings ------------------------------- */
+
+
+
+
+/// SCROLLBAR /////
+
+
+@mixin scrollbars($size, $foreground-color, $background-color: 'white') {
+  // For Google Chrome
+  //mix($foreground-color, white,  50%)
+  &::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+}
