@@ -1,0 +1,6 @@
+//Rewrite to www
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^konradgolinski.pl[nc]
+RewriteRule ^(.*)$ http://www.konradgolinski.pl/$1 [r=301,nc]
+ 
