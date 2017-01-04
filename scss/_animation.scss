@@ -1,0 +1,8 @@
+  @include keyframes(ripple) {
+     100% {
+      opacity: 0;
+      -webkit-transform: scale(5);
+    }
+  }
+
+ 

@@ -1,0 +1,29 @@
+
+$url:'../fonts/';
+@mixin font-face($name,$ext:'.ttf') {
+	@font-face{
+	font-family: $name;
+	src:url(#{$url}#{$name}#{$ext})
+	}
+}
+ 
+
+@include font-face(KaushanScript-Regular,'.otf');
+@include font-face(Montserrat-Bold,'.otf');
+@include font-face(Montserrat-Regular,'.otf');
+@include font-face(Montserrat-ExtraLight,'.otf');
+@include font-face(Montserrat-Light,'.otf');
+@include font-face(Montserrat-Medium,'.otf');
+@include font-face(Montserrat-ExtraBold,'.otf');
+@include font-face(Montserrat-SemiBold,'.otf');
+@include font-face(Montserrat-Thin,'.otf');
+@include font-face(Montserrat-UltraLight,'.otf');
+@include font-face(Roboto-Regular);
+@include font-face(Roboto-Light);
+
+@include font-face(Raleway-Bold);
+@include font-face(Raleway-Light);
+@include font-face(Raleway-Medium);
+@include font-face(Raleway-Regular);
+@include font-face(Raleway-Semibold);
+@include font-face(Raleway-Thin);

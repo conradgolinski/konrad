@@ -1,0 +1,56 @@
+// /* ****************
+//     INK EFFECT
+// *******************/
+
+// @mixin ink($width,$height,$r,$g,$b,$a:0.5,$text:#fff,$border:0.5rem,$scale:5,$time:0.2s) {
+//   .ripplelink {
+//     display: block;
+//     float: left;
+//     width: $width;
+//     height: $height;
+//     line-height: $height;
+//     text-align: center;
+//     position: relative;
+//     overflow: hidden;
+//     color:$text !important;
+//     z-index: 0; 
+//     background-color: rgb($r,$g,$b);
+//       @include transition(all 0.2s ease-in);
+//       @include border-radius($border);
+//       @include box-shadow(0px,2px,10px,rgba(0, 0, 0, $a));
+
+
+//       &:hover {
+//           @include transition-duration($time);
+//           @include transition-timing-function(ease-in);
+//           z-index: 1000;
+//       }
+//       &:active {
+//           @include box-shadow(0px,3px,10px,rgba(0, 0, 0, $a));
+//       }
+  
+// }
+//   .ink {
+//     display: block;
+//     position: absolute;
+//     @if ($r<=255 and $r>200 and $g<=255 and $g>200 and $b<=255 and $b>200){
+//     background: rgba(100, 100, 100, $a);
+//     }
+//     @else {
+//     background: rgba(255, 255, 255, $a);
+//     }
+//     @include border-radius(100%);
+//     @include transform(scale(0));
+//   }
+
+//   .animate {
+//     @include animation(ripple 0.6s linear);
+//   }
+
+//   @include keyframes(ripple) {
+//      100% {
+//       opacity: 0;
+//       -webkit-transform: scale($scale);
+//     }
+//   }
+// }
