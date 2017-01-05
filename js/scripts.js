@@ -58,7 +58,7 @@
           for(var i=s;i<n+s;i++){
             if(i<iconsKnow.length)$('section#know .icons').append('<img src="'+images+iconsKnow[i]+logoExt+'">').find('img').stop().fadeIn(1000);
             }
-          s=s + n;
+          s=s + n; 
           if(s >= 10){
             s=0;
           }
