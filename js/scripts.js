@@ -48,7 +48,6 @@
         else n=2;
         var s=0;
         var interval = 5000;
-        $('section#know .icons').html('');
           for(var i=0;i<n;i++){
             $('section#know .icons').append('<img src="'+images+iconsKnow[i]+logoExt+'">').find('img').stop().fadeIn(1000);
             }
