@@ -49,13 +49,13 @@
         var s=0;
         var interval = 5000;
           for(var i=0;i<n;i++){
-            $('section#know .icons').append('<img src="'+images+iconsKnow[i]+logoExt+'">').find('img').stop().fadeIn(1000);
+            $('section#know .icons').append('<img src="'+images+iconsKnow[i]+logoExt+'">').find('img').fadeIn(1000);
             }
           s=s + n;
         var infinite = setInterval(function(){
            $('section#know .icons').find('img').fadeOut(1000).parent().html('');
           for(var i=s;i<n+s;i++){
-            if(i<iconsKnow.length)$('section#know .icons').append('<img src="'+images+iconsKnow[i]+logoExt+'">').find('img').stop().fadeIn(1000);
+            if(i<iconsKnow.length)$('section#know .icons').append('<img src="'+images+iconsKnow[i]+logoExt+'">').find('img').fadeIn(1000);
             }
           s=s + n; 
           if(s >= 10){
