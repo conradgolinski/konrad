@@ -260,7 +260,6 @@ section#know {
 		}
 		img {
 			width:120px;
-			display: none;
 			animation:fadeIn 1s;
 			@include breakpoint(mobileonly){
 				width:90px;
@@ -274,9 +273,9 @@ section#know {
 			z-index: 100;
 			width:100%;
 			height:300px;
+			display: block;
 			@include breakpoint(mobileonly){
-				margin-top:-100px;
-				height:100px;
+				display: none;
 			}
 
 		}

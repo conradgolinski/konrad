@@ -37,27 +37,36 @@
     var n = 0;
     knowledge();
     $(window).resize(function(){
-        knowledge();
+        infinite();
     });
 
     function knowledge() {
-      winWidth = $(window).width();
+      var time = setTimeout(function(){
+        winWidth = $(window).width();
+      },1000);
         if(winWidth > 1000)n = 5;
         else if(winWidth <= 1000 && winWidth > 800)n=4;
         else if(winWidth <=800 && winWidth > 500) n=3;
         else n=2;
         var s=0;
         var interval = 5000;
+        $('section#know .icons').html('');
           for(var i=0;i<n;i++){
-            $('section#know .icons').append('<img src="'+images+iconsKnow[i]+logoExt+'">').find('img').fadeIn(1000);
+            $('section#know .icons').append('<img src="'+images+iconsKnow[i]+logoExt+'">').stop('true','true').animate({opacity:1}, 1000);
             }
           s=s + n;
         var infinite = setInterval(function(){
-           $('section#know .icons').find('img').fadeOut(1000).parent().html('');
+          winWidth = $(window).width();
+           if(winWidth > 1000)n = 5;
+        else if(winWidth <= 1000 && winWidth > 800)n=4;
+        else if(winWidth <=800 && winWidth > 500) n=3;
+        else n=2;
+          console.log(n);
+           $('section#know .icons').find('img').stop('true','true').animate({opacity:0}, 1000).parent().html('');
           for(var i=s;i<n+s;i++){
-            if(i<iconsKnow.length)$('section#know .icons').append('<img src="'+images+iconsKnow[i]+logoExt+'">').find('img').fadeIn(1000);
+            if(i<iconsKnow.length)$('section#know .icons').append('<img src="'+images+iconsKnow[i]+logoExt+'">').find('img').stop('true','true').animate({opacity:1}, 1000);
             }
-          s=s + n; 
+          s=s + n;
           if(s >= 10){
             s=0;
           }
